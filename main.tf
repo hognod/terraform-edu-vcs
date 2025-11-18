@@ -1,3 +1,14 @@
+terraform {
+  cloud {
+    organization = "DDIM-ORG"
+    hostname = "app.terraform.io"
+
+    workspaces {
+      name = "terraform-edu"
+    }
+  }
+}
+
 resource "aws_vpc" "main" {
   cidr_block = var.address_space
   enable_dns_support = true
